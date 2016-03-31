@@ -1,5 +1,5 @@
-#Team16_week4
+# Team16 Week4
 
-This is repository of team 16.
+This is project of team 16 of class 'Actual Practice'
 
-Mainly, it covers simple bill system of week 3
+It covers bill system
