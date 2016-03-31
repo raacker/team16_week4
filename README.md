@@ -1,3 +1,5 @@
 # team16_week4
-hi hello
-나도한번 해보자 ㅋㅋ
+
+This is project of team 16 of 'Actual Coding' class
+
+It covers 'Bill System'
