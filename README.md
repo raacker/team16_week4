@@ -20,3 +20,5 @@ remote test
 remote test1
 
 test
+
+test bash
