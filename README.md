@@ -8,6 +8,8 @@ test commit
 
 test commit2
 
+test
+
 pull test
 
 remote test
