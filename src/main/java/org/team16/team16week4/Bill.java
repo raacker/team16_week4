@@ -46,6 +46,7 @@ public class Bill {
 	}
 	public void drawBill(){
 		logger.log(Level.FINE, "Cost : " + this.detailedCostObject.getTotalCost());
+		System.out.println(detailedCostObject.getTotalCostEvaluation());
 	}
 	
 	private void addFileHandler(Logger logger)

@@ -50,16 +50,16 @@ public class DetailedCost {
 	public String getTotalCostEvaluation(){
 		//return this.userData.getUserPlan().getBasicMonthlyRate() + " + " + "(" + this.userData.getNumberOfLines() + " * " + this.userData.getUserPlan().getAdditionalLineRate() + ") + " +  this.additionalLineCost + " = " + this.getTotalCost();
 		String expresion = this.userData.getUserPlan().getBasicMonthlyRate() + "";
-		if(userData.getNumberOfLines() > 0)
+		if(userData.getUsedMinutes() > userData.getUserPlan().getIncludeMinutes())
 		{
-			expresion = expresion + " + " + getOverExcessMinutesCost();
+			expresion = expresion + getOverExcessMinutesCostEvaluation();
 		}
 		if(userData.getNumberOfLines() > 0)
 		{
-			expresion = expresion + " + " + getAdditionalLineCost();
+			expresion = expresion + getAdditionalLineCostEvaluation();
 		}
 		
-		return expresion;
+		return expresion + " = " + this.totalCost;
 	}
 	
 	public String getOverExcessMinutesCostEvaluation(){
@@ -69,9 +69,9 @@ public class DetailedCost {
 	public String getAdditionalLineCostEvaluation(){
 		if(this.userData.getFamilyDiscount()){
 			if(this.userData.getNumberOfLines()==4)
-				return " + (" + 2 + "*" + this.userData.getUserPlan().getAdditionalLineRate() + ")" + this.userData.getUserPlan().getFamilyDiscountFee();
+				return " + (" + 2 + "*" + this.userData.getUserPlan().getAdditionalLineRate() + ")" + " + " + this.userData.getUserPlan().getFamilyDiscountFee();
 			else
-				return " + (" + 2 + "*" + this.userData.getUserPlan().getAdditionalLineRate() + ") + (" + (this.userData.getNumberOfLines()-2) + "*" + this.userData.getUserPlan().getFamilyDiscountFee() + ")";
+				return " + (" + 2 + "*" + this.userData.getUserPlan().getAdditionalLineRate() + ") + (" + (this.userData.getNumberOfLines()-3) + "*" + this.userData.getUserPlan().getFamilyDiscountFee() + ")";
 		}
 		else{
 			if(this.userData.getNumberOfLines()==2)
