@@ -31,14 +31,6 @@
   </profiles>
 
   <build>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-      </resource>
-      <resource>
-        <directory>src/main/resources-${env}</directory>
-      </resource>
-    </resources>
     
     <plugins>
       <plugin>
@@ -57,7 +49,6 @@
             <id>default-prepare-agent</id>
             <goals>
               <goal>prepare-agent</goal>
-              <goal>org.jacoco-maven-plugin:prepare-agent install</goal>
             </goals>
           </execution>
         </executions>
