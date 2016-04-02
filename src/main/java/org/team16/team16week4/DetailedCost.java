@@ -48,7 +48,6 @@ public class DetailedCost {
 	}
 	
 	public String getTotalCostEvaluation(){
-		//return this.userData.getUserPlan().getBasicMonthlyRate() + " + " + "(" + this.userData.getNumberOfLines() + " * " + this.userData.getUserPlan().getAdditionalLineRate() + ") + " +  this.additionalLineCost + " = " + this.getTotalCost();
 		String expresion = this.userData.getUserPlan().getBasicMonthlyRate() + "";
 		if(userData.getUsedMinutes() > userData.getUserPlan().getIncludeMinutes())
 		{
