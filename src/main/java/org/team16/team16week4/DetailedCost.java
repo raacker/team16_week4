@@ -1,9 +1,8 @@
-package org.team16.team16_week4;
+package org.team16.team16week4;
 
 public class DetailedCost {
 	private double additionalLineCost;
 	private double overExcessMinutesCost;
-	//double basicRateCost; 이게 필요할까?
 	private double totalCost;
 	private User userData;
 	
