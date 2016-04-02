@@ -1,7 +1,5 @@
 package org.team16.team16week4;
 
-import java.io.FileNotFoundException;
-
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
