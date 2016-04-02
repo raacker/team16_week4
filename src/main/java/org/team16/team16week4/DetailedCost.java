@@ -52,10 +52,21 @@ public class DetailedCost {
 	}
 	
 	public String getOverExcessMinutesCostEvaluation(){
-		return null;
+		return " + (" + (this.userData.getUsedMinutes()-this.userData.getUserPlan().getIncludeMinutes()) + "*" + this.userData.getUserPlan().getRatePerExcessMinute() + ")";
 	}
 	
 	public String getAdditionalLineCostEvaluation(){
-		return null;
+		if(this.userData.getFamilyDiscount()){
+			if(this.userData.getNumberOfLines()==4)
+				return " + (" + 2 + "*" + this.userData.getUserPlan().getAdditionalLineRate() + ")" + this.userData.getUserPlan().getFamilyDiscountFee();
+			else
+				return " + (" + 2 + "*" + this.userData.getUserPlan().getAdditionalLineRate() + ") + (" + (this.userData.getNumberOfLines()-2) + "*" + this.userData.getUserPlan().getFamilyDiscountFee() + ")";
+		}
+		else{
+			if(this.userData.getNumberOfLines()==2)
+				return this.userData.getUserPlan().getAdditionalLineRate() + "";
+			else
+				return " + (" + this.userData.getNumberOfLines() + "*" + this.userData.getUserPlan().getAdditionalLineRate() + ")"; 
+		}
 	}
 }
