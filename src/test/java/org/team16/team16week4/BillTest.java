@@ -16,17 +16,19 @@ public class BillTest extends TestCase{
     }
     public void testApp()
     {
-        Bill testBill = new Bill("Gold", 878, 4);
+    	String gold = "Gold";
+    	String silver = "Silver";
+        Bill testBill = new Bill(gold, 878, 4);
         assertEquals(83.95,testBill.drawBill(),0.01);
-        testBill = new Bill("Gold", 1123, 1);
+        testBill = new Bill(gold, 1123, 1);
         assertEquals(105.3,testBill.drawBill(),0.01);
-        testBill = new Bill("Gold", 1123, 4);
+        testBill = new Bill(gold, 1123, 4);
         assertEquals(139.3,testBill.drawBill(),0.01);
-        testBill = new Bill("Silver", 523, 2);
+        testBill = new Bill(silver, 523, 2);
         assertEquals(63.87,testBill.drawBill(),0.01);
-        testBill = new Bill("Silver", 44, 5);
+        testBill = new Bill(silver, 44, 5);
         assertEquals(82.95,testBill.drawBill(),0.01);
-        testBill = new Bill("Silver", 521, 5);
+        testBill = new Bill(silver, 521, 5);
         assertEquals(94.29,testBill.drawBill(),0.01);
     }
 }

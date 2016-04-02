@@ -17,16 +17,14 @@ public class Bill {
 	
 	private void initBill(String planName, int usedMinutes, int numberOfLines)
 	{
-		logger.log(Level.FINE, "Plan : " + planName + "\n");
-		logger.log(Level.FINE, "Total Usage Time : " + usedMinutes + "\n");
-		
 		if (numberOfLines < 0)
 		{
-			logger.log(Level.SEVERE, "Negative number cannot be used for line number\n");
+			logger.log(Level.INFO, "Negative number cannot be used for line number\n");
 		}
 		else
 		{
-			logger.log(Level.FINE, "Using Lines : " + numberOfLines + "\n");
+			logger.log(Level.INFO, "Plan : " + planName + "\nTotal Usage Time : " 
+						+ usedMinutes + "\nUsing Lines : " + numberOfLines + "\n");
 			if("Gold".equals(planName))
 				plan = new Gold();
 			else
@@ -38,7 +36,7 @@ public class Bill {
 
 	}
 	public double drawBill(){
-		logger.log(Level.FINE, "Cost : " + this.detailedCostObject.getTotalCost()+ "\n");
+		logger.log(Level.INFO, "Cost : " + this.detailedCostObject.getTotalCost()+ "\n");
 		return new Double(this.detailedCostObject.getTotalCost());
 	}
 	
