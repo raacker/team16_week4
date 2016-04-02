@@ -20,13 +20,10 @@ public class Bill {
 	private void initBill()
 	{
 		Scanner sc = new Scanner(System.in);
-		//System.out.print("Plan : ");
 		logger.log(Level.FINE, "Plan : ");
 		String inputPlan = sc.nextLine();
-		//System.out.print("총사용시간 : ");
 		logger.log(Level.FINE, "Total Usage Time : ");
 		int usedMinutes = sc.nextInt();
-		//System.out.print("사용회선 : ");
 		logger.log(Level.FINE, "Using Lines : ");
 		int numberOfLines = sc.nextInt();
 		
@@ -50,13 +47,13 @@ public class Bill {
 		{
 			fileHandler = new FileHandler(Bill.class.getName() + ".log");
 		}
-		catch(IOException IOE)
+		catch(IOException ioe)
 		{
-			logger.log(Level.SEVERE, null, IOE);
+			logger.log(Level.SEVERE, null, ioe);
 		}
-		catch(SecurityException SECE)
+		catch(SecurityException sece)
 		{
-			logger.log(Level.SEVERE, null, SECE);
+			logger.log(Level.SEVERE, null, sece);
 		}
 		logger.addHandler(fileHandler);
 	}
