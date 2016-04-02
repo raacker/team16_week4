@@ -8,22 +8,32 @@ public class Bill {
 	private Plan plan;
 	private User userObject;
 	private DetailedCost detailedCostObject;
-	private static final Logger logger = Logger.getLogger(Bill.class.getName());
+	private static final Logger billLogger = Logger.getLogger(Bill.class.getName());
 	private FileHandler fileHandler;
+	
 	public Bill(String planName, int usedMinutes, int numberOfLines){
 		initBill(planName, usedMinutes, numberOfLines);
-		addFileHandler(logger);
+		addFileHandler(billLogger);
+	}
+	
+	public DetailedCost getDetailedCostObject()
+	{
+		return this.detailedCostObject;
+	}
+	public User getUserObject()
+	{
+		return this.userObject;
 	}
 	
 	private void initBill(String planName, int usedMinutes, int numberOfLines)
 	{
 		if (numberOfLines < 0)
 		{
-			logger.log(Level.INFO, "Negative number cannot be used for line number\n");
+			billLogger.log(Level.INFO, "Negative number cannot be used for line number\n");
 		}
 		else
 		{
-			logger.log(Level.INFO, "Plan : " + planName + "\nTotal Usage Time : " 
+			billLogger.log(Level.INFO, "Plan : " + planName + "\nTotal Usage Time : " 
 						+ usedMinutes + "\nUsing Lines : " + numberOfLines + "\n");
 			if("Gold".equals(planName))
 				plan = new Gold();
@@ -36,11 +46,10 @@ public class Bill {
 
 	}
 
-	public double drawBill(){
-		logger.log(Level.INFO, "Cost : " + this.detailedCostObject.getTotalCost()+ "\n");
-		return new Double(this.detailedCostObject.getTotalCost());
+	public void drawBill(){
+		billLogger.log(Level.INFO, "Cost : " + this.detailedCostObject.getTotalCost()+ "\n");
 	}
-	
+
 	private void addFileHandler(Logger logger)
 	{
 		try
