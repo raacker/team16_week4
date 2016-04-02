@@ -27,13 +27,20 @@ public class Bill {
 		logger.log(Level.FINE, "Using Lines : ");
 		int numberOfLines = sc.nextInt();
 		
-		if("Gold".equals(inputPlan))
-			plan = new Gold();
+		if (numberOfLines < 0)
+		{
+			logger.log(Level.SEVERE, "Negative number cannot be used for line number");
+		}
 		else
-			plan = new Silver();
+		{
+			if("Gold".equals(inputPlan))
+				plan = new Gold();
+			else
+				plan = new Silver();
 		
-		this.userObject = new User(plan, numberOfLines, usedMinutes);
-		this.detailedCostObject = new DetailedCost(userObject);
+			this.userObject = new User(plan, numberOfLines, usedMinutes);
+			this.detailedCostObject = new DetailedCost(userObject);
+		}
 
 		sc.close();
 	}

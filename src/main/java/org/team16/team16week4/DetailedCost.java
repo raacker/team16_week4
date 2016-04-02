@@ -32,10 +32,6 @@ public class DetailedCost {
 		else if(this.userData.getNumberOfLines() > 2){
 			this.additionalLineCost =  2*this.userData.getUserPlan().getAdditionalLineRate() + (this.userData.getNumberOfLines()-3)*5;
 		}
-		else{
-			System.out.println("뭐여 어째서 추가 라인수가 "+this.userData.getNumberOfLines()+"이여");
-		}
-		
 	}
 	
 	private void calculateOverExcessMinutesCost(){
