@@ -1,38 +1,37 @@
 package org.team16.team16week4;
 
 public class User {
-	private Plan _plan;
-	private int _numberOfLines;
-	private int _usedMinutes;
-	private boolean _familyDiscount;
+	private Plan plan;
+	private int numberOfLines;
+	private int usedMinutes;
+	private boolean familyDiscount;
 	
 	public User(Plan plan, int lines, int minutes)
 	{
-		this._plan = plan;
-		this._numberOfLines = lines;
-		this._usedMinutes = minutes;
-		if(this._numberOfLines >= 3)
-			this._familyDiscount = true;
+		this.plan = plan;
+		this.numberOfLines = lines;
+		this.usedMinutes = minutes;
+		if(this.numberOfLines >= 3)
+			this.familyDiscount = true;
 		else
-			this._familyDiscount = false;
+			this.familyDiscount = false;
 	}
 	
 	public Plan getUserPlan()
 	{
-		return this._plan;
+		return this.plan;
 	}
 	public int getNumberOfLines()
 	{
-		return this._numberOfLines;
+		return this.numberOfLines;
 	}
 	public int getUsedMinutes()
 	{
-		return this._usedMinutes;
+		return this.usedMinutes;
 	}
 	public boolean getFamilyDiscount()
 	{
-		return this._familyDiscount;
+		return this.familyDiscount;
 	}
-	
 	
 }
