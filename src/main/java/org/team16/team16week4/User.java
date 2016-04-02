@@ -11,7 +11,7 @@ public class User {
 		this.plan = plan;
 		this.numberOfLines = lines;
 		this.usedMinutes = minutes;
-		if(this.numberOfLines >= 3)
+		if(this.numberOfLines > 3)
 			this.familyDiscount = true;
 		else
 			this.familyDiscount = false;

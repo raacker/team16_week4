@@ -6,6 +6,7 @@ public class Plan {
 	protected int includeMinutes;
 	protected double ratePerExcessMinute;
 	protected double additionalLineRate;
+	protected double familyDiscountFee;
 	
 	public String getPlanName() {
 		return this.planName;
@@ -27,4 +28,7 @@ public class Plan {
 		return this.additionalLineRate;
 	}
 	
+	public double getFamilyDiscountFee(){
+		return this.familyDiscountFee;
+	}
 }
