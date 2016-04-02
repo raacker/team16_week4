@@ -1,14 +1,30 @@
 package org.team16.team16_week4;
 
-public interface Plan {
-	public String getPlanName();
+public class Plan {
+	protected String planName;
+	protected double basicMonthlyRate;
+	protected int includeMinutes;
+	protected double ratePerExcessMinute;
+	protected double additionalLineRate;
 	
-	public double getBasicMonthlyRate();
-	
-	public int getIncludeMinutes();
-	
-	public double getRatePerExcessMinute();
-	
-	public double getAdditionalLineRate();
+	public String getPlanName() {
+		return this.planName;
+	}
+
+	public double getBasicMonthlyRate() {
+		return this.basicMonthlyRate;
+	}
+
+	public int getIncludeMinutes() {
+		return this.includeMinutes;
+	}
+
+	public double getRatePerExcessMinute() {
+		return this.ratePerExcessMinute;
+	}
+
+	public double getAdditionalLineRate() {
+		return this.additionalLineRate;
+	}
 	
 }
