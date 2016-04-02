@@ -8,6 +8,7 @@ public class Gold extends Plan {
 		super.includeMinutes = 1000;
 		super.ratePerExcessMinute = 0.45;
 		super.additionalLineRate = 14.50;
+		super.familyDiscountFee = 5.00;
 	}
 
 }
