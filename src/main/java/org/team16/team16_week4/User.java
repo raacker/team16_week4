@@ -6,6 +6,9 @@ public class User {
 	private int _usedMinutes;
 	private boolean _familyDiscount;
 	
+	private User() {
+	}
+	
 	public User(Plan plan, int lines, int minutes)
 	{
 		this._plan = plan;
