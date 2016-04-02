@@ -8,6 +8,7 @@ public class Bill {
 	private Plan plan;
 	private User userObject;
 	private DetailedCost detailedCostObject;
+	private PrintExpectedBill printExpectedBill;
 	private static final Logger billLogger = Logger.getLogger(Bill.class.getName());
 	private FileHandler fileHandler;
 	
@@ -42,12 +43,15 @@ public class Bill {
 		
 			this.userObject = new User(plan, numberOfLines, usedMinutes);
 			this.detailedCostObject = new DetailedCost(userObject);
+			this.printExpectedBill = new PrintExpectedBill(this.detailedCostObject);
 		}
-
 	}
 
 	public void drawBill(){
-		billLogger.log(Level.INFO, "Cost : " + this.detailedCostObject.getTotalCost()+ "\n");
+		billLogger.log(Level.INFO, "TotalCost : " 
+					+ this.printExpectedBill.printTotalCostEvaluation()+ "\n"+"AdditionalCost : " 
+					+ this.printExpectedBill.printAdditionalLineCostEvaluation()+"\n"+"OverExcessMinutesCost : "
+					+ this.printExpectedBill.printOverExcessMinutesCostEvaluation() + "\n");
 	}
 
 	private void addFileHandler(Logger logger)

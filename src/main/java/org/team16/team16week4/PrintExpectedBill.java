@@ -9,24 +9,28 @@ public class PrintExpectedBill {
 	}
 	
 	public String printTotalCostEvaluation(){
-		String expresion = this.detailedCost.getUserData().getUserPlan().getBasicMonthlyRate() + "";
-		if(this.detailedCost.getUserData().getUsedMinutes() > this.detailedCost.getUserData().getUserPlan().getIncludeMinutes())
-		{
-			expresion = expresion + printOverExcessMinutesCostEvaluation();
-		}
-		if(this.detailedCost.getUserData().getNumberOfLines() > 0)
-		{
-			expresion = expresion + printAdditionalLineCostEvaluation();
-		}
+		StringBuilder expression = new StringBuilder(this.detailedCost.getUserData().getUserPlan().getBasicMonthlyRate() + "");
 		
-		return expresion + " = " + this.detailedCost.getTotalCost();
+		String excessMinuteForm = printOverExcessMinutesCostEvaluation();
+		if (excessMinuteForm != null)
+			expression.append(excessMinuteForm);
+		
+		String additionalLineForm = printAdditionalLineCostEvaluation();
+		if (additionalLineForm != null)
+			expression.append(additionalLineForm);
+	
+		return expression.toString() + " = " + String.format("%.2f", this.detailedCost.getTotalCost());
 	}
 	
 	public String printOverExcessMinutesCostEvaluation(){
-		return " + (" + (this.detailedCost.getUserData().getUsedMinutes()-this.detailedCost.getUserData().getUserPlan().getIncludeMinutes()) + "*" + this.detailedCost.getUserData().getUserPlan().getRatePerExcessMinute() + ")";
+		if(this.detailedCost.getUserData().getUsedMinutes() > this.detailedCost.getUserData().getUserPlan().getIncludeMinutes())
+			return " + (" + (this.detailedCost.getUserData().getUsedMinutes()-this.detailedCost.getUserData().getUserPlan().getIncludeMinutes()) + "*" + this.detailedCost.getUserData().getUserPlan().getRatePerExcessMinute() + ")";
+		return null;
 	}
 	
 	public String printAdditionalLineCostEvaluation(){
+		if(this.detailedCost.getUserData().getNumberOfLines() == 1)
+			return null;
 		if(this.detailedCost.getUserData().getFamilyDiscount()){
 			if(this.detailedCost.getUserData().getNumberOfLines()==4)
 				return " + (" + 2 + "*" + this.detailedCost.getUserData().getUserPlan().getAdditionalLineRate() + ")" + " + " + this.detailedCost.getUserData().getUserPlan().getFamilyDiscountFee();
@@ -35,7 +39,7 @@ public class PrintExpectedBill {
 		}
 		else{
 			if(this.detailedCost.getUserData().getNumberOfLines()==2)
-				return this.detailedCost.getUserData().getUserPlan().getAdditionalLineRate() + "";
+				return " + " + this.detailedCost.getUserData().getUserPlan().getAdditionalLineRate();
 			else
 				return " + (" + this.detailedCost.getUserData().getNumberOfLines() + "*" + this.detailedCost.getUserData().getUserPlan().getAdditionalLineRate() + ")"; 
 		}
