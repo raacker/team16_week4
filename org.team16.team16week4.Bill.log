@@ -2,73 +2,11 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2016-04-02T16:08:29</date>
-  <millis>1459580909111</millis>
   <sequence>1</sequence>
   <logger>org.team16.team16week4.Bill</logger>
   <level>INFO</level>
   <class>org.team16.team16week4.Bill</class>
-  <method>initBill</method>
-  <thread>1</thread>
-  <message>Plan : Gold
-Total Usage Time : 1123
-Using Lines : 1
-</message>
-</record>
-<record>
-  <date>2016-04-02T16:08:29</date>
-  <millis>1459580909113</millis>
-  <sequence>2</sequence>
-  <logger>org.team16.team16week4.Bill</logger>
-  <level>INFO</level>
-  <class>org.team16.team16week4.Bill</class>
-  <method>initBill</method>
-  <thread>1</thread>
-  <message>Plan : Gold
-Total Usage Time : 1123
-Using Lines : 4
-</message>
-</record>
-<record>
-  <date>2016-04-02T16:08:29</date>
-  <millis>1459580909114</millis>
-  <sequence>3</sequence>
-  <logger>org.team16.team16week4.Bill</logger>
-  <level>INFO</level>
-  <class>org.team16.team16week4.Bill</class>
-  <method>initBill</method>
-  <thread>1</thread>
-  <message>Plan : Silver
-Total Usage Time : 523
-Using Lines : 2
-</message>
-</record>
-<record>
-  <date>2016-04-02T16:08:29</date>
-  <millis>1459580909116</millis>
-  <sequence>4</sequence>
-  <logger>org.team16.team16week4.Bill</logger>
-  <level>INFO</level>
-  <class>org.team16.team16week4.Bill</class>
-  <method>initBill</method>
-  <thread>1</thread>
-  <message>Plan : Silver
-Total Usage Time : 44
-Using Lines : 5
-</message>
-</record>
-<record>
-  <date>2016-04-02T16:08:29</date>
-  <millis>1459580909118</millis>
-  <sequence>5</sequence>
-  <logger>org.team16.team16week4.Bill</logger>
-  <level>INFO</level>
-  <class>org.team16.team16week4.Bill</class>
-  <method>initBill</method>
-  <thread>1</thread>
-  <message>Plan : Silver
-Total Usage Time : 521
-Using Lines : 5
+
 </message>
 </record>
 </log>
