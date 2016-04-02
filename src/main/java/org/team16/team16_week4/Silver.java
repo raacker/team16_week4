@@ -7,7 +7,7 @@ public class Silver implements Plan {
 	private double ratePerExcessMinute;
 	private double additionalLineRate;
 
-	public Silver(){
+	private Silver(){
 		this.planName = "Silver";
 		this.basicMonthlyRate = 29.95;
 		this.includeMinutes = 500;
