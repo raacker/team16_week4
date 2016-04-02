@@ -6,6 +6,9 @@ package org.team16.team16_week4;
  */
 public class App 
 {
+	private App(){
+	}
+	
     public static void main( String[] args )
     {
     	Bill bill = new Bill();

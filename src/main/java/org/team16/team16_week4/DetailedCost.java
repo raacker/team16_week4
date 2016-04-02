@@ -7,9 +7,6 @@ public class DetailedCost {
 	private double totalCost;
 	private User userData;
 	
-	private DetailedCost() {
-	}
-	
 	public DetailedCost(User userData){
 		this.userData = userData;
 		this.calculateAdditionalLineCost();
