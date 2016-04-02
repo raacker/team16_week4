@@ -1,4 +1,6 @@
 package org.team16.team16week4;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.FileHandler;
@@ -11,21 +13,19 @@ public class Bill {
 	private DetailedCost detailedCostObject;
 	private static final Logger logger = Logger.getLogger(Bill.class.getName());
 	private FileHandler fileHandler;
-	
-	public Bill(){
-		initBill();
+	public Bill(String planName, int usedMinutes, int numberOfLines){
+		initBill(planName, usedMinutes, numberOfLines);
 		addFileHandler(logger);
 	}
 	
-	private void initBill()
+	private void initBill(String planName, int usedMinutes, int numberOfLines)
 	{
-		Scanner sc = new Scanner(System.in);
-		logger.log(Level.FINE, "Plan : ");
-		String inputPlan = sc.nextLine();
-		logger.log(Level.FINE, "Total Usage Time : ");
-		int usedMinutes = sc.nextInt();
-		logger.log(Level.FINE, "Using Lines : ");
-		int numberOfLines = sc.nextInt();
+		logger.log(Level.FINE, "Plan : " + planName);
+		//String inputPlan = sc.next();
+		logger.log(Level.FINE, "Total Usage Time : " + usedMinutes);
+		//int usedMinutes = sc.nextInt();
+		logger.log(Level.FINE, "Using Lines : " + numberOfLines);
+		//int numberOfLines = sc.nextInt();
 		
 		if (numberOfLines < 0)
 		{
@@ -33,7 +33,7 @@ public class Bill {
 		}
 		else
 		{
-			if("Gold".equals(inputPlan))
+			if("Gold".equals(planName))
 				plan = new Gold();
 			else
 				plan = new Silver();
@@ -42,10 +42,10 @@ public class Bill {
 			this.detailedCostObject = new DetailedCost(userObject);
 		}
 
-		sc.close();
 	}
-	public void drawBill(){
+	public double drawBill(){
 		logger.log(Level.FINE, "Cost : " + this.detailedCostObject.getTotalCost());
+		return new Double(this.detailedCostObject.getTotalCost());
 	}
 	
 	private void addFileHandler(Logger logger)

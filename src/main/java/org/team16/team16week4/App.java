@@ -11,7 +11,7 @@ public class App
 	
     public static void main( String[] args )
     {
-    	Bill bill = new Bill();
+    	Bill bill = new Bill("Gold", 878, 4);
 		bill.drawBill();
     }
 }
