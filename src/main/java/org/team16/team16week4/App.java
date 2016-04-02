@@ -11,6 +11,9 @@ public class App
 	
     public static void main( String[] args )
     {
+    	/*
+    	 * This is Only Test Data
+    	 */
     	String gold = "Gold";
     	Bill bill = new Bill(gold, 1123, 1);
     	bill.drawBill();
