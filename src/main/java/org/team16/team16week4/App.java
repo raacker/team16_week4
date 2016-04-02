@@ -12,7 +12,7 @@ public class App
     public static void main( String[] args )
     {
     	String gold = "Gold";
-    	Bill bill = new Bill(gold, 878, 4);
+    	Bill bill = new Bill(gold, 1123, 1);
     	bill.drawBill();
     }
 }
