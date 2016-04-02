@@ -1,4 +1,4 @@
-package org.team16.team16_week4;
+package org.team16.team16week4;
 import java.util.Scanner;
 
 public class Bill {
