@@ -2,9 +2,15 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <sonar.language>java</sonar.language>
+    <jar.name>team16_bill_system</jar.name>
+  </properties>
+  
   <groupId>org.team16</groupId>
   <artifactId>team16_week4</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.5.0</version>
   <packaging>jar</packaging>
 
   <name>team16_week4</name>
@@ -34,12 +40,34 @@
     
     <plugins>
       <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <configuration>
+                <archive>
+                    <manifest>
+                         <mainClass>org.team16.team16week4.App</mainClass>
+                         <addClasspath>true</addClasspath>
+                    </manifest>
+                </archive>
+            </configuration>
+        </plugin>
+       <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+                <execution>
+                    <id>copy-dependencies</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>copy-dependencies</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <outputDirectory>${deploy.target.dir}/${lib.dir}</outputDirectory>
+                <overWriteIfNewer>true</overWriteIfNewer>
+            </configuration>
+        </plugin>
       <plugin>
       	<groupId>org.jacoco</groupId>
       	<artifactId>jacoco-maven-plugin</artifactId>
@@ -48,11 +76,6 @@
     </plugins>
    
   </build>
-  
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <sonar.language>java</sonar.language>
-  </properties>
 
   <dependencies>
     <dependency>
