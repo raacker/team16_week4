@@ -7,14 +7,31 @@ It covers 'Bill System'
 
 #<< Program Detail >>
 
+
+<h1>Build Program</h1>
+
+Clone this repository and do
+	
+	mvn clean package
+	cd target (move onto target directory)
+	java -jar team16_week4-0.0.1-SNAPSHOT.jar
+	
 <h1>Input</h1>
 
-* Plan Type
+Program is made on infinity loop. Program works with 2 menu
+* 1 : Calculate Total cost of last month
+* 2 : Exit program
+
+if 1st menu chosen, input should be made of a sequence with
+* Plan Type - Gold or Silver
 * Usage of time
 * Usage of lines
 
+ex) Gold 900 1 / Silver 2415 4 / Gold 1123 3
+
 <h1>Output</h1>
 
+* Plan Type, Usage of time, Usage of lines
 * Basic rate + Additional time cost + Additional line cost = Total Cost
 
 
@@ -32,4 +49,4 @@ Bill Class는 유저의 정보를 토대로 금액을 계산하며 이 정보들
 	공통
 	추가 회선이 3개 이상일 때 부터는 3번째 회선부터 5.00의 추가 요금만 지불한다.
 	
-DetailedCost가 정보를 토대로 전체 요금을 계산하면 PrintExpectedBill이 이 결과 값을 토대로 형식에 맞추어 데이터를 출력합니다. 데이터의 출력은 log에 저장되며 DetailedCostTest Class를 통해 이를 확인해 볼 수 있습니다.
+DetailedCost가 정보를 토대로 전체 요금을 계산하면 PrintExpectedBill이 이 결과 값을 토대로 형식에 맞추어 String Data를 가공합니다. 그리고 이렇게 가공된 데이터는 AppController를 통해서 log에 기록되고 출력의 형식은 AppController에서 확인해 볼 수 있습니다.
