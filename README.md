@@ -10,6 +10,8 @@ It covers 'Bill System'
 
 <h1>Build Program</h1>
 
+This program requires Maven Build System.
+
 Clone this repository and do
 	
 	mvn clean package
