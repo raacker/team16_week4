@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="x-windows-949" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2016-04-03T12:18:34</date>
+  <millis>1459653514693</millis>
+  <sequence>0</sequence>
+  <logger>org.team16.team16week4.Bill</logger>
+  <level>INFO</level>
+  <class>org.team16.team16week4.AppController</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>
+======================Bill System======================
+1-&gt; Get Result
+2-&gt; Exit</message>
+</record>
+<record>
+  <date>2016-04-03T12:18:35</date>
+  <millis>1459653515640</millis>
+  <sequence>1</sequence>
+  <logger>org.team16.team16week4.Bill</logger>
+  <level>INFO</level>
+  <class>org.team16.team16week4.AppController</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>======================End Program======================</message>
+</record>
+</log>
