@@ -10,18 +10,10 @@ It covers 'Bill System'
 
 <h1>Build Program</h1>
 
-This program is built with Maven Build System. If you want to build it, Maven required first.
+Clone this repository and
 
-Clone this repository and do
-	
-	mvn clean package
-	cd target (move onto target directory)
-	java -jar team16_week4-0.5.0.jar
-
-or just do
-
-	cd target
-	java -jar team16_week4-0.5.0.jar
+	mv build
+	java -jar team16_bill_system.jar
 	
 <h1>Input</h1>
 
