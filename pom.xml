@@ -5,6 +5,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <sonar.language>java</sonar.language>
+    <deploy.target.dir>build</deploy.target.dir>
     <jar.name>team16_bill_system</jar.name>
   </properties>
   
@@ -43,6 +44,8 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-jar-plugin</artifactId>
             <configuration>
+      			<finalName>${jar.name}</finalName>
+            	<outputDirectory>${deploy.target.dir}</outputDirectory>
                 <archive>
                     <manifest>
                          <mainClass>org.team16.team16week4.App</mainClass>
