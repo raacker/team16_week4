@@ -2,8 +2,8 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2016-04-03T12:18:34</date>
-  <millis>1459653514693</millis>
+  <date>2016-04-03T13:48:31</date>
+  <millis>1459658911049</millis>
   <sequence>0</sequence>
   <logger>org.team16.team16week4.Bill</logger>
   <level>INFO</level>
@@ -16,8 +16,8 @@
 2-&gt; Exit</message>
 </record>
 <record>
-  <date>2016-04-03T12:18:35</date>
-  <millis>1459653515640</millis>
+  <date>2016-04-03T13:48:42</date>
+  <millis>1459658922440</millis>
   <sequence>1</sequence>
   <logger>org.team16.team16week4.Bill</logger>
   <level>INFO</level>
