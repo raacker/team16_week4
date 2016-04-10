@@ -19,7 +19,7 @@ public class PrintExpectedBill {
 		if (additionalLineForm != null)
 			expression += additionalLineForm;
 	
-		return expression.toString() + " = " + String.format("%.2f", this.detailedCost.getTotalCost());
+		return expression + " = " + String.format("%.2f", this.detailedCost.getTotalCost());
 	}
 	
 	public String printOverExcessMinutesCostEvaluation(){
