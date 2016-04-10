@@ -9,15 +9,15 @@ public class PrintExpectedBill {
 	}
 	
 	public String printTotalCostEvaluation(){
-		StringBuilder expression = new StringBuilder(this.detailedCost.getUserData().getUserPlan().getBasicMonthlyRate() + "");
+		String expression = Double.toString(this.detailedCost.getUserData().getUserPlan().getBasicMonthlyRate());
 		
 		String excessMinuteForm = printOverExcessMinutesCostEvaluation();
 		if (excessMinuteForm != null)
-			expression.append(excessMinuteForm);
+			expression += excessMinuteForm;
 		
 		String additionalLineForm = printAdditionalLineCostEvaluation();
 		if (additionalLineForm != null)
-			expression.append(additionalLineForm);
+			expression += additionalLineForm;
 	
 		return expression.toString() + " = " + String.format("%.2f", this.detailedCost.getTotalCost());
 	}
